@@ -1,8 +1,10 @@
 package ru.itmo.webmail.web.page;
 
+import ru.itmo.webmail.model.domain.Talk;
 import ru.itmo.webmail.model.domain.User;
 import ru.itmo.webmail.model.service.ConfirmService;
 import ru.itmo.webmail.model.service.EventService;
+import ru.itmo.webmail.model.service.TalkService;
 import ru.itmo.webmail.model.service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,8 +14,9 @@ public class Page {
     static final String USER_ID_SESSION_KEY = "userId";
 
     private UserService userService = new UserService();
-    private EventService eventService=new EventService();
-    private ConfirmService confirmService=new ConfirmService();
+    private EventService eventService = new EventService();
+    private ConfirmService confirmService = new ConfirmService();
+    private TalkService talkService = new TalkService();
 
 
     private User user;
@@ -21,10 +24,16 @@ public class Page {
     UserService getUserService() {
         return userService;
     }
-    EventService getEventService(){
+
+    TalkService getTalkService() {
+        return talkService;
+    }
+
+    EventService getEventService() {
         return eventService;
     }
-    ConfirmService getConfirmService(){
+
+    ConfirmService getConfirmService() {
         return confirmService;
     }
 
